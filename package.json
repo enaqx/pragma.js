@@ -1,0 +1,19 @@
+{
+  "name": "pragma.js",
+  "version": "0.0.1",
+  "description": "Pragma",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enaqx/pragma.git"
+  },
+  "author": "Nick Raienko <enaqxx@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/enaqx/pragma/issues"
+  },
+  "homepage": "https://github.com/enaqx/pragma#readme",
+  "scripts": {
+    "test": "mocha"
+  }
+}
