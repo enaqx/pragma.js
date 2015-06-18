@@ -8,7 +8,7 @@ describe('Arrays', function() {
     assert.equal([1, 2, 3].first(), 1);
     assert.equal([2, 3, 4].first(), 2);
     assert.equal(['a', 'b', 'c'].first(), 'a');
-    assert.equal(['b', 'c', 'd'].first(), 'b');;
+    assert.equal(['b', 'c', 'd'].first(), 'b');
     assert.deepEqual([1, 2, 3].first(0), []);
     assert.deepEqual([1], [1, 2, 3].first(1));
     assert.deepEqual([1, 2], [1, 2, 3].first(2));
@@ -38,7 +38,7 @@ describe('Arrays', function() {
       assert.deepEqual([1, 2, 3].initial(), [1, 2]);
       assert.deepEqual([2, 3, 4].initial(), [2, 3]);
       assert.deepEqual(['a', 'b', 'c'].initial(), ['a', 'b']);
-      assert.deepEqual(['b', 'c', 'd'].initial(), ['b', 'c']);;
+      assert.deepEqual(['b', 'c', 'd'].initial(), ['b', 'c']);
       assert.deepEqual([1, 2, 3].initial(0), [1, 2, 3]);
       assert.deepEqual([1, 2, 3].initial(1), [1, 2]);
       assert.deepEqual([1, 2, 3].initial(2), [1]);
