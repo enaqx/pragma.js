@@ -12,7 +12,42 @@ describe('Numbers', function() {
 
   describe('#isEven()', function() {
     it('should return true then number is even', function() {
-      // assert.equal((2).isEven());
+      assert.equal((-Infinity).isEven(), undefined);
+      assert.equal((-9999e9999).isEven(), undefined);
+      assert.equal((-9999.9999).isEven(), undefined);
+      assert.equal((-9999).isEven(), false);
+      assert.equal((-2).isEven(), true);
+      assert.equal((-1).isEven(), false);
+      assert.equal((-0).isEven(), true);
+      assert.equal((NaN).isEven(), undefined);
+      assert.equal((0).isEven(), true);
+      assert.equal((1).isEven(), false);
+      assert.equal((2).isEven(), true);
+      assert.equal((9999).isEven(), false);
+      assert.equal((9999.9999).isEven(), undefined);
+      assert.equal((9999e9999).isEven(), undefined);
+      assert.equal((Infinity).isEven(), undefined);
+    });
+  });
+
+
+  describe('#isOdd()', function() {
+    it('should return true then number is odd', function() {
+      assert.equal((-Infinity).isOdd(), undefined);
+      assert.equal((-9999e9999).isOdd(), undefined);
+      assert.equal((-9999.9999).isOdd(), undefined);
+      assert.equal((-9999).isOdd(), true);
+      assert.equal((-2).isOdd(), false);
+      assert.equal((-1).isOdd(), true);
+      assert.equal((-0).isOdd(), false);
+      assert.equal((NaN).isOdd(), undefined);
+      assert.equal((0).isOdd(), false);
+      assert.equal((1).isOdd(), true);
+      assert.equal((2).isOdd(), false);
+      assert.equal((9999).isOdd(), true);
+      assert.equal((9999.9999).isOdd(), undefined);
+      assert.equal((9999e9999).isOdd(), undefined);
+      assert.equal((Infinity).isOdd(), undefined);
     });
   });
 
