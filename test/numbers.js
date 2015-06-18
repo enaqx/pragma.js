@@ -186,6 +186,48 @@ describe('Numbers', function() {
   });
 
 
+  describe('#parity()', function() {
+    it('should return 0 on even and 1 on odd number', function() {
+      assert.equal((-Infinity).parity(), undefined);
+      assert.equal((-9999e9999).parity(), undefined);
+      assert.equal((-9999.9999).parity(), undefined);
+      assert.equal((-9999).parity(), 1);
+      assert.equal((-2).parity(), 0);
+      assert.equal((-1).parity(), 1);
+      assert.equal((-0).parity(), 0);
+      assert.equal((NaN).parity(), undefined);
+      assert.equal((0).parity(), 0);
+      assert.equal((1).parity(), 1);
+      assert.equal((2).parity(), 0);
+      assert.equal((9999).parity(), 1);
+      assert.equal((9999.9999).parity(), undefined);
+      assert.equal((9999e9999).parity(), undefined);
+      assert.equal((Infinity).parity(), undefined);
+    });
+  });
+
+
+  describe('#parityOfNumber()', function() {
+    it('should return parity of number as string', function() {
+      assert.equal((-Infinity).parityOfNumber(), undefined);
+      assert.equal((-9999e9999).parityOfNumber(), undefined);
+      assert.equal((-9999.9999).parityOfNumber(), undefined);
+      assert.equal((-9999).parityOfNumber(), 'odd');
+      assert.equal((-2).parityOfNumber(), 'even');
+      assert.equal((-1).parityOfNumber(), 'odd');
+      assert.equal((-0).parityOfNumber(), 'even');
+      assert.equal((NaN).parityOfNumber(), undefined);
+      assert.equal((0).parityOfNumber(), 'even');
+      assert.equal((1).parityOfNumber(), 'odd');
+      assert.equal((2).parityOfNumber(), 'even');
+      assert.equal((9999).parityOfNumber(), 'odd');
+      assert.equal((9999.9999).parityOfNumber(), undefined);
+      assert.equal((9999e9999).parityOfNumber(), undefined);
+      assert.equal((Infinity).parityOfNumber(), undefined);
+    });
+  });
+
+
   describe('#toZero()', function() {
     it('should convert every number to zero', function() {
       assert.equal((-Infinity).toZero(), 0);
