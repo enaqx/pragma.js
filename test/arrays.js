@@ -1,3 +1,8 @@
+/**
+ * Array test
+ */
+'use strict';
+
 require('../pragma');
 var assert = require('assert');
 

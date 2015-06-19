@@ -1,5 +1,12 @@
+/**
+ * String test
+ */
+'use strict';
+
+
 require('../pragma');
 var assert = require('assert');
+
 
 describe('Strings', function() {
 

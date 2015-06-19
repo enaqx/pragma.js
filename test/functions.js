@@ -1,0 +1,4 @@
+/**
+ * Function test
+ */
+'use strict';

@@ -1,5 +1,5 @@
 /**
- * Number Test
+ * Number test
  */
 'use strict';
 
