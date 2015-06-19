@@ -115,6 +115,26 @@ describe('Numbers', function() {
   });
 
 
+  describe('#isNotFiniteNumber()', function() {
+    it('should return true on not finite number', function() {
+      assert.equal((-Infinity).isNotFiniteNumber(), true);
+      assert.equal((-9999e9999).isNotFiniteNumber(), true);
+      assert.equal((-9999.9999).isNotFiniteNumber(), false);
+      assert.equal((-9999).isNotFiniteNumber(), false);
+      assert.equal((-2).isNotFiniteNumber(), false);
+      assert.equal((-1).isNotFiniteNumber(), false);
+      assert.equal((-0).isNotFiniteNumber(), false);
+      assert.equal((NaN).isNotFiniteNumber(), true);
+      assert.equal((0).isNotFiniteNumber(), false);
+      assert.equal((1).isNotFiniteNumber(), false);
+      assert.equal((2).isNotFiniteNumber(), false);
+      assert.equal((9999).isNotFiniteNumber(), false);
+      assert.equal((9999.9999).isNotFiniteNumber(), false);
+      assert.equal((9999e9999).isNotFiniteNumber(), true);
+      assert.equal((Infinity).isNotFiniteNumber(), true);
+    });
+  });
+
   /* Built-in */
   describe('#isInteger()', function() {
     it('should return true on integer number in argument', function() {
