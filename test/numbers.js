@@ -269,4 +269,25 @@ describe('Numbers', function() {
     });
   });
 
+
+  describe('#toDigitsArray()', function() {
+    it('should return arrays of digits of the given number', function() {
+      assert.equal((-Infinity).toDigitsArray(), undefined);
+      assert.equal((-9999e9999).toDigitsArray(), undefined);
+      assert.equal((-9999.9999).toDigitsArray(), 1);
+      assert.equal((-9999).toDigitsArray(), 1);
+      assert.equal((-2).toDigitsArray(), 1);
+      assert.equal((-1).toDigitsArray(), 1);
+      assert.equal((0).toDigitsArray(), 1);
+      assert.equal((NaN).toDigitsArray(), undefined);
+      assert.equal((-0).toDigitsArray(), 1);
+      assert.equal((1).toDigitsArray(), 1);
+      assert.equal((2).toDigitsArray(), 1);
+      assert.equal((9999).toDigitsArray(), 1);
+      assert.equal((9999.9999).toDigitsArray(), 1);
+      assert.equal((9999e9999).toDigitsArray(), undefined);
+      assert.equal((Infinity).toDigitsArray(), undefined);
+    });
+  });
+
 });

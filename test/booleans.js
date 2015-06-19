@@ -20,8 +20,8 @@ describe('Booleans', function() {
 
   describe('#toNumber()', function() {
     it('should return number according to boolean value', function() {
-      assert.deepEqual((true).toNumber(), 1);
-      assert.deepEqual((false).toNumber(), 0);
+      assert.equal((true).toNumber(), 1);
+      assert.equal((false).toNumber(), 0);
     });
   });
 
@@ -29,6 +29,13 @@ describe('Booleans', function() {
     it('should return "yes" or "no" depending on boolean value', function() {
       assert.deepEqual((true).toWord(), 'yes');
       assert.deepEqual((false).toWord(), 'no');
+    });
+  });
+
+  describe('#opposite()', function() {
+    it('should opposite value of boolean', function() {
+      assert.equal((true).opposite(), false);
+      assert.equal((false).opposite(), true);
     });
   });
 
