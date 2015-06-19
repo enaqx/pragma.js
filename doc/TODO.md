@@ -4,3 +4,6 @@ Numbers:
  * create #times() like in Ruby
  * #isPositive(), #isNegative(), #isNull()
  
+
+String:
+ * capitalize first letter
