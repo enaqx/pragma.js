@@ -10,6 +10,26 @@ require('../pragma');
 
 describe('Numbers', function() {
 
+  describe('#abs()', function() {
+    it('should return the absolute value of a number,n', function() {
+      assert.equal((-Infinity).abs(), Infinity);
+      assert.equal((-9999e9999).abs(), Infinity);
+      assert.equal((-9999.9999).abs(), 9999.9999);
+      assert.equal((-9999).abs(), 9999);
+      assert.equal((-2).abs(), 2);
+      assert.equal((-1).abs(), 1);
+      assert.equal((-0).abs(), 0);
+      assert.deepEqual((NaN).abs().toString(), NaN.toString());
+      assert.equal((0).abs(), 0);
+      assert.equal((1).abs(), 1);
+      assert.equal((2).abs(), 2);
+      assert.equal((9999).abs(), 9999);
+      assert.equal((9999.9999).abs(), 9999.9999);
+      assert.equal((9999e9999).abs(), Infinity);
+      assert.equal((Infinity).abs(), Infinity);
+    });
+  });
+
   describe('#isEven()', function() {
     it('should return true then number is even', function() {
       assert.equal((-Infinity).isEven(), undefined);
