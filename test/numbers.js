@@ -75,42 +75,42 @@ describe('Numbers', function() {
   /* Built-in */
   describe('#isFinite()', function() {
     it('should return true on finite number in argument', function() {
-      assert(!Number.isFinite(-Infinity));
-      assert(!Number.isFinite(-9999e9999));
-      assert(Number.isFinite(-9999.9999));
-      assert(Number.isFinite(-9999));
-      assert(Number.isFinite(-2));
-      assert(Number.isFinite(-1));
-      assert(Number.isFinite(-0));
-      assert(!Number.isFinite(NaN));
-      assert(Number.isFinite(0));
-      assert(Number.isFinite(1));
-      assert(Number.isFinite(2));
-      assert(Number.isFinite(9999));
-      assert(Number.isFinite(9999.9999));
-      assert(!Number.isFinite(9999e9999));
-      assert(!Number.isFinite(Infinity));
+      assert.equal(Number.isFinite(-Infinity), false);
+      assert.equal(Number.isFinite(-9999e9999), false);
+      assert.equal(Number.isFinite(-9999.9999), true);
+      assert.equal(Number.isFinite(-9999), true);
+      assert.equal(Number.isFinite(-2), true);
+      assert.equal(Number.isFinite(-1), true);
+      assert.equal(Number.isFinite(-0), true);
+      assert.equal(Number.isFinite(NaN), false);
+      assert.equal(Number.isFinite(0), true);
+      assert.equal(Number.isFinite(1), true);
+      assert.equal(Number.isFinite(2), true);
+      assert.equal(Number.isFinite(9999), true);
+      assert.equal(Number.isFinite(9999.9999), true);
+      assert.equal(Number.isFinite(9999e9999), false);
+      assert.equal(Number.isFinite(Infinity), false);
     });
   });
 
 
   describe('#isFiniteNumber()', function() {
     it('should return true on finite number', function() {
-      assert(!(-Infinity).isFiniteNumber());
-      assert(!(-9999e9999).isFiniteNumber());
-      assert((-9999.9999).isFiniteNumber());
-      assert((-9999).isFiniteNumber());
-      assert((-2).isFiniteNumber());
-      assert((-1).isFiniteNumber());
-      assert((-0).isFiniteNumber());
-      assert(!(NaN).isFiniteNumber());
-      assert((0).isFiniteNumber());
-      assert((1).isFiniteNumber());
-      assert((2).isFiniteNumber());
-      assert((9999).isFiniteNumber());
-      assert((9999.9999).isFiniteNumber());
-      assert(!(9999e9999).isFiniteNumber());
-      assert(!(Infinity).isFiniteNumber());
+      assert.equal((-Infinity).isFiniteNumber(), false);
+      assert.equal((-9999e9999).isFiniteNumber(), false);
+      assert.equal((-9999.9999).isFiniteNumber(), true);
+      assert.equal((-9999).isFiniteNumber(), true);
+      assert.equal((-2).isFiniteNumber(), true);
+      assert.equal((-1).isFiniteNumber(), true);
+      assert.equal((-0).isFiniteNumber(), true);
+      assert.equal((NaN).isFiniteNumber(), false);
+      assert.equal((0).isFiniteNumber(), true);
+      assert.equal((1).isFiniteNumber(), true);
+      assert.equal((2).isFiniteNumber(), true);
+      assert.equal((9999).isFiniteNumber(), true);
+      assert.equal((9999.9999).isFiniteNumber(), true);
+      assert.equal((9999e9999).isFiniteNumber(), false);
+      assert.equal((Infinity).isFiniteNumber(), false);
     });
   });
 
@@ -138,42 +138,42 @@ describe('Numbers', function() {
   /* Built-in */
   describe('#isInteger()', function() {
     it('should return true on integer number in argument', function() {
-      assert(!Number.isInteger(-Infinity));
-      assert(!Number.isInteger(-9999e9999));
-      assert(!Number.isInteger(-9999.9999));
-      assert(Number.isInteger(-9999));
-      assert(Number.isInteger(-2));
-      assert(Number.isInteger(-1));
-      assert(Number.isInteger(-0));
-      assert(!Number.isInteger(NaN));
-      assert(Number.isInteger(0));
-      assert(Number.isInteger(1));
-      assert(Number.isInteger(2));
-      assert(Number.isInteger(9999));
-      assert(!Number.isInteger(9999.9999));
-      assert(!Number.isInteger(9999e9999));
-      assert(!Number.isInteger(Infinity));
+      assert.equal(Number.isInteger(-Infinity), false);
+      assert.equal(Number.isInteger(-9999e9999), false);
+      assert.equal(Number.isInteger(-9999.9999), false);
+      assert.equal(Number.isInteger(-9999), true);
+      assert.equal(Number.isInteger(-2), true);
+      assert.equal(Number.isInteger(-1), true);
+      assert.equal(Number.isInteger(-0), true);
+      assert.equal(Number.isInteger(NaN), false);
+      assert.equal(Number.isInteger(0), true);
+      assert.equal(Number.isInteger(1), true);
+      assert.equal(Number.isInteger(2), true);
+      assert.equal(Number.isInteger(9999), true);
+      assert.equal(Number.isInteger(9999.9999), false);
+      assert.equal(Number.isInteger(9999e9999), false);
+      assert.equal(Number.isInteger(Infinity), false);
     });
   });
 
 
   describe('#isIntegerNumber()', function() {
     it('should return true on integer number', function() {
-      assert(!(-Infinity).isIntegerNumber());
-      assert(!(-9999e9999).isIntegerNumber());
-      assert(!(-9999.9999).isIntegerNumber());
-      assert((-9999).isIntegerNumber());
-      assert((-2).isIntegerNumber());
-      assert((-1).isIntegerNumber());
-      assert((-0).isIntegerNumber());
-      assert(!(NaN).isIntegerNumber());
-      assert((0).isIntegerNumber());
-      assert((1).isIntegerNumber());
-      assert((2).isIntegerNumber());
-      assert((9999).isIntegerNumber());
-      assert(!(9999.9999).isIntegerNumber());
-      assert(!(9999e9999).isIntegerNumber());
-      assert(!(Infinity).isIntegerNumber());
+      assert.equal((-Infinity).isIntegerNumber(), false);
+      assert.equal((-9999e9999).isIntegerNumber(), false);
+      assert.equal((-9999.9999).isIntegerNumber(), false);
+      assert.equal((-9999).isIntegerNumber(), true);
+      assert.equal((-2).isIntegerNumber(), true);
+      assert.equal((-1).isIntegerNumber(), true);
+      assert.equal((-0).isIntegerNumber(), true);
+      assert.equal((NaN).isIntegerNumber(), false);
+      assert.equal((0).isIntegerNumber(), true);
+      assert.equal((1).isIntegerNumber(), true);
+      assert.equal((2).isIntegerNumber(), true);
+      assert.equal((9999).isIntegerNumber(), true);
+      assert.equal((9999.9999).isIntegerNumber(), false);
+      assert.equal((9999e9999).isIntegerNumber(), false);
+      assert.equal((Infinity).isIntegerNumber(), false);
     });
   });
 
@@ -181,23 +181,23 @@ describe('Numbers', function() {
   /* Built-in */
   describe('#isNaN()', function() {
     it('should return true on NaN in argument', function() {
-      assert(!Number.isNaN(-Infinity));
-      assert(!Number.isNaN(-9999e9999));
-      assert(!Number.isNaN(-9999.9999));
-      assert(!Number.isNaN(-9999));
-      assert(!Number.isNaN(-2));
-      assert(!Number.isNaN(-1));
-      assert(!Number.isNaN(-0));
-      assert(Number.isNaN(-0 / 0));
-      assert(Number.isNaN(NaN));
-      assert(Number.isNaN(0 / 0));
-      assert(!Number.isNaN(0));
-      assert(!Number.isNaN(1));
-      assert(!Number.isNaN(2));
-      assert(!Number.isNaN(9999));
-      assert(!Number.isNaN(9999.9999));
-      assert(!Number.isNaN(9999e9999));
-      assert(!Number.isNaN(Infinity));
+      assert.equal(Number.isNaN(-Infinity), false);
+      assert.equal(Number.isNaN(-9999e9999), false);
+      assert.equal(Number.isNaN(-9999.9999), false);
+      assert.equal(Number.isNaN(-9999), false);
+      assert.equal(Number.isNaN(-2), false);
+      assert.equal(Number.isNaN(-1), false);
+      assert.equal(Number.isNaN(-0), false);
+      assert.equal(Number.isNaN(-0 / 0), true);
+      assert.equal(Number.isNaN(NaN), true);
+      assert.equal(Number.isNaN(0 / 0), true);
+      assert.equal(Number.isNaN(0), false);
+      assert.equal(Number.isNaN(1), false);
+      assert.equal(Number.isNaN(2), false);
+      assert.equal(Number.isNaN(9999), false);
+      assert.equal(Number.isNaN(9999.9999), false);
+      assert.equal(Number.isNaN(9999e9999), false);
+      assert.equal(Number.isNaN(Infinity), false);
     });
   });
 
@@ -205,23 +205,23 @@ describe('Numbers', function() {
   /* Built-in */
   describe('#isNotNumber()', function() {
     it('should return true on NaN', function() {
-      assert(!(-Infinity).isNotNumber());
-      assert(!(-9999e9999).isNotNumber());
-      assert(!(-9999.9999).isNotNumber());
-      assert(!(-9999).isNotNumber());
-      assert(!(-2).isNotNumber());
-      assert(!(-1).isNotNumber());
-      assert(!(-0).isNotNumber());
-      assert((-0 / 0).isNotNumber());
-      assert((NaN).isNotNumber());
-      assert((0 / 0).isNotNumber());
-      assert(!(0).isNotNumber());
-      assert(!(1).isNotNumber());
-      assert(!(2).isNotNumber());
-      assert(!(9999).isNotNumber());
-      assert(!(9999.9999).isNotNumber());
-      assert(!(9999e9999).isNotNumber());
-      assert(!(Infinity).isNotNumber());
+      assert.equal((-Infinity).isNotNumber(), false);
+      assert.equal((-9999e9999).isNotNumber(), false);
+      assert.equal((-9999.9999).isNotNumber(), false);
+      assert.equal((-9999).isNotNumber(), false);
+      assert.equal((-2).isNotNumber(), false);
+      assert.equal((-1).isNotNumber(), false);
+      assert.equal((-0).isNotNumber(), false);
+      assert.equal((-0 / 0).isNotNumber(), true);
+      assert.equal((NaN).isNotNumber(), true);
+      assert.equal((0 / 0).isNotNumber(), true);
+      assert.equal((0).isNotNumber(), false);
+      assert.equal((1).isNotNumber(), false);
+      assert.equal((2).isNotNumber(), false);
+      assert.equal((9999).isNotNumber(), false);
+      assert.equal((9999.9999).isNotNumber(), false);
+      assert.equal((9999e9999).isNotNumber(), false);
+      assert.equal((Infinity).isNotNumber(), false);
     });
   });
 
