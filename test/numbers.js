@@ -273,18 +273,18 @@ describe('Numbers', function() {
   describe('#toDigitsArray()', function() {
     it('should return arrays of digits of the given number', function() {
       assert.equal((-Infinity).toDigitsArray(), undefined);
-      assert.equal((-9999e9999).toDigitsArray(), undefined);
-      assert.equal((-9999.9999).toDigitsArray(), 1);
-      assert.equal((-9999).toDigitsArray(), 1);
-      assert.equal((-2).toDigitsArray(), 1);
-      assert.equal((-1).toDigitsArray(), 1);
-      assert.equal((0).toDigitsArray(), 1);
+      assert.deepEqual((-9999e9999).toDigitsArray(), undefined);
+      assert.deepEqual((-9999.9999).toDigitsArray(), [9, 9, 9, 9, 9, 9, 9, 9]);
+      assert.deepEqual((-9999).toDigitsArray(), [9, 9, 9, 9]);
+      assert.deepEqual((-2).toDigitsArray(), [2]);
+      assert.deepEqual((-1).toDigitsArray(), [1]);
+      assert.deepEqual((0).toDigitsArray(), [0]);
       assert.equal((NaN).toDigitsArray(), undefined);
-      assert.equal((-0).toDigitsArray(), 1);
-      assert.equal((1).toDigitsArray(), 1);
-      assert.equal((2).toDigitsArray(), 1);
-      assert.equal((9999).toDigitsArray(), 1);
-      assert.equal((9999.9999).toDigitsArray(), 1);
+      assert.deepEqual((-0).toDigitsArray(), [0]);
+      assert.deepEqual((1).toDigitsArray(), [1]);
+      assert.deepEqual((2).toDigitsArray(), [2]);
+      assert.deepEqual((9999).toDigitsArray(), [9, 9, 9, 9]);
+      assert.deepEqual((9999.9999).toDigitsArray(), [9, 9, 9, 9, 9, 9, 9, 9]);
       assert.equal((9999e9999).toDigitsArray(), undefined);
       assert.equal((Infinity).toDigitsArray(), undefined);
     });
