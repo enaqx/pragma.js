@@ -284,6 +284,30 @@ describe('Numbers', function() {
     });
   });
 
+
+  describe('#isNegative()', function() {
+    it('should return true on negative number', function() {
+      assert.equal((-Infinity).isNegative(), true);
+      assert.equal((-9999e9999).isNegative(), true);
+      assert.equal((-9999.9999).isNegative(), true);
+      assert.equal((-9999).isNegative(), true);
+      assert.equal((-2).isNegative(), true);
+      assert.equal((-1).isNegative(), true);
+      assert.equal((-0).isNegative(), undefined);
+      assert.equal((-0 / 0).isNegative(), undefined);
+      assert.equal((NaN).isNegative(), undefined);
+      assert.equal((0 / 0).isNegative(), undefined);
+      assert.equal((0).isNegative(), undefined);
+      assert.equal((1).isNegative(), false);
+      assert.equal((2).isNegative(), false);
+      assert.equal((9999).isNegative(), false);
+      assert.equal((9999.9999).isNegative(), false);
+      assert.equal((9999e9999).isNegative(), false);
+      assert.equal((Infinity).isNegative(), false);
+    });
+  });
+
+
   describe('#parity()', function() {
     it('should return 0 on even and 1 on odd number', function() {
       assert.equal((-Infinity).parity(), undefined);
