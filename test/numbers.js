@@ -247,6 +247,13 @@ describe('Numbers', function() {
   });
 
 
+  describe('#isPrime()', function() {
+    it('should return true on prime number', function() {
+      assert.equal((137).isPrime(), true);
+      assert.equal((237).isPrime(), false);
+    });
+  });
+
   describe('#parity()', function() {
     it('should return 0 on even and 1 on odd number', function() {
       assert.equal((-Infinity).parity(), undefined);
