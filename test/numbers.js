@@ -178,6 +178,27 @@ describe('Numbers', function() {
   });
 
 
+  describe('#isNotIntegerNumber()', function() {
+    it('should return false on integer number', function() {
+      assert.equal((-Infinity).isNotIntegerNumber(), true);
+      assert.equal((-9999e9999).isNotIntegerNumber(), true);
+      assert.equal((-9999.9999).isNotIntegerNumber(), true);
+      assert.equal((-9999).isNotIntegerNumber(), false);
+      assert.equal((-2).isNotIntegerNumber(), false);
+      assert.equal((-1).isNotIntegerNumber(), false);
+      assert.equal((-0).isNotIntegerNumber(), false);
+      assert.equal((NaN).isNotIntegerNumber(), true);
+      assert.equal((0).isNotIntegerNumber(), false);
+      assert.equal((1).isNotIntegerNumber(), false);
+      assert.equal((2).isNotIntegerNumber(), false);
+      assert.equal((9999).isNotIntegerNumber(), false);
+      assert.equal((9999.9999).isNotIntegerNumber(), true);
+      assert.equal((9999e9999).isNotIntegerNumber(), true);
+      assert.equal((Infinity).isNotIntegerNumber(), true);
+    });
+  });
+
+
   /* Built-in */
   describe('#isNaN()', function() {
     it('should return true on NaN in argument', function() {
