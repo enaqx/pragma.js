@@ -249,8 +249,38 @@ describe('Numbers', function() {
 
   describe('#isPrime()', function() {
     it('should return true on prime number', function() {
+      assert.equal((-Infinity).isPrime(), undefined);
+      assert.equal((-9999e9999).isPrime(), undefined);
+      assert.equal((-9999.9999).isPrime(), undefined);
+      assert.equal((2).isPrime(), true);
       assert.equal((137).isPrime(), true);
       assert.equal((237).isPrime(), false);
+      assert.equal((9999.9999).isPrime(), undefined);
+      assert.equal((9999e9999).isPrime(), undefined);
+      assert.equal((Infinity).isPrime(), undefined);
+    });
+  });
+
+
+  describe('#isPositive()', function() {
+    it('should return true on positive number', function() {
+      assert.equal((-Infinity).isPositive(), false);
+      assert.equal((-9999e9999).isPositive(), false);
+      assert.equal((-9999.9999).isPositive(), false);
+      assert.equal((-9999).isPositive(), false);
+      assert.equal((-2).isPositive(), false);
+      assert.equal((-1).isPositive(), false);
+      assert.equal((-0).isPositive(), undefined);
+      assert.equal((-0 / 0).isPositive(), undefined);
+      assert.equal((NaN).isPositive(), undefined);
+      assert.equal((0 / 0).isPositive(), undefined);
+      assert.equal((0).isPositive(), undefined);
+      assert.equal((1).isPositive(), true);
+      assert.equal((2).isPositive(), true);
+      assert.equal((9999).isPositive(), true);
+      assert.equal((9999.9999).isPositive(), true);
+      assert.equal((9999e9999).isPositive(), true);
+      assert.equal((Infinity).isPositive(), true);
     });
   });
 
