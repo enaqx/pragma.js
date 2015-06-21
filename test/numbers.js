@@ -273,9 +273,19 @@ describe('Numbers', function() {
       assert.equal((-Infinity).isPrime(), undefined);
       assert.equal((-9999e9999).isPrime(), undefined);
       assert.equal((-9999.9999).isPrime(), undefined);
+      assert.equal((-104729).isPrime(), undefined);
+      assert.equal((-237).isPrime(), undefined);
+      assert.equal((-137).isPrime(), undefined);
+      assert.equal((-2).isPrime(), undefined);
+      assert.equal((-1).isPrime(), undefined);
+      assert.equal((-0).isPrime(), undefined);
+      assert.equal((NaN).isPrime(), undefined);
+      assert.equal((0).isPrime(), undefined);
+      assert.equal((1).isPrime(), false);
       assert.equal((2).isPrime(), true);
       assert.equal((137).isPrime(), true);
       assert.equal((237).isPrime(), false);
+      assert.equal((104729).isPrime(), true);
       assert.equal((9999.9999).isPrime(), undefined);
       assert.equal((9999e9999).isPrime(), undefined);
       assert.equal((Infinity).isPrime(), undefined);
@@ -483,6 +493,8 @@ describe('Numbers', function() {
       assert.deepEqual((-9999e9999).toString(), -Infinity);
       assert.deepEqual((-9999.9999).toString(), '-9999.9999');
       assert.deepEqual((-9999).toString(), '-9999');
+      assert.deepEqual((-254).toString(16), '-fe');
+      assert.deepEqual((-10).toString(2), '-1010');
       assert.deepEqual((-2).toString(), '-2');
       assert.deepEqual((-1).toString(), '-1');
       assert.deepEqual((0).toString(), '0');
@@ -490,6 +502,8 @@ describe('Numbers', function() {
       assert.deepEqual((-0).toString(), '0');
       assert.deepEqual((1).toString(), '1');
       assert.deepEqual((2).toString(), '2');
+      assert.deepEqual((10).toString(2), '1010');
+      assert.deepEqual((254).toString(16), 'fe');
       assert.deepEqual((9999).toString(), '9999');
       assert.deepEqual((9999.9999).toString(), '9999.9999');
       assert.deepEqual((9999e9999).toString(), 'Infinity');
