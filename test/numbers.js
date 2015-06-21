@@ -56,6 +56,31 @@ describe('Numbers', function() {
   });
 
 
+  describe('#floor()', function() {
+    it('should return the largest integer less than or equal', function() {
+      assert.equal((-Infinity).floor(), -Infinity);
+      assert.equal((-9999e9999).floor(), -Infinity);
+      assert.equal((-9999.9999).floor(), -10000);
+      assert.equal((-9999).floor(), -9999);
+      assert.equal((-2.0001).floor(), -3);
+      assert.equal((-2).floor(), -2);
+      assert.equal((-1).floor(), -1);
+      assert.equal((-.95).floor(), -1);
+      assert.equal((-0).floor(), -0);
+      assert.deepEqual((NaN).floor().toString(), NaN.floor().toString());
+      assert.equal((0).floor(), 0);
+      assert.equal((.95).floor(), 0);
+      assert.equal((1).floor(), 1);
+      assert.equal((2).floor(), 2);
+      assert.equal((2.0001).floor(), 2);
+      assert.equal((9999).floor(), 9999);
+      assert.equal((9999.9999).floor(), 9999);
+      assert.equal((9999e9999).floor(), Infinity);
+      assert.equal((Infinity).floor(), Infinity);
+    })
+  });
+
+
   describe('#negate()', function() {
     it('should return negate of number', function() {
       assert.equal((-Infinity).negate(), Infinity);
