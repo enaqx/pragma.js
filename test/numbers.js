@@ -11,7 +11,7 @@ require('../pragma');
 describe('Numbers', function() {
 
   describe('#abs()', function() {
-    it('should return the absolute value of a number,n', function() {
+    it('should return the absolute value of a number', function() {
       assert.equal((-Infinity).abs(), Infinity);
       assert.equal((-9999e9999).abs(), Infinity);
       assert.equal((-9999.9999).abs(), 9999.9999);
@@ -27,6 +27,27 @@ describe('Numbers', function() {
       assert.equal((9999.9999).abs(), 9999.9999);
       assert.equal((9999e9999).abs(), Infinity);
       assert.equal((Infinity).abs(), Infinity);
+    });
+  });
+
+
+  describe('#negate()', function() {
+    it('should return negate of number', function() {
+      assert.equal((-Infinity).negate(), Infinity);
+      assert.equal((-9999e9999).negate(), Infinity);
+      assert.equal((-9999.9999).negate(), 9999.9999);
+      assert.equal((-9999).negate(), 9999);
+      assert.equal((-2).negate(), 2);
+      assert.equal((-1).negate(), 1);
+      assert.equal((-0).negate(), 0);
+      assert.deepEqual((NaN).negate().toString(), NaN.toString());
+      assert.equal((0).negate(), -0);
+      assert.equal((1).negate(), -1);
+      assert.equal((2).negate(), -2);
+      assert.equal((9999).negate(), -9999);
+      assert.equal((9999.9999).negate(), -9999.9999);
+      assert.equal((9999e9999).negate(), -Infinity);
+      assert.equal((Infinity).negate(), -Infinity);
     });
   });
 
@@ -379,9 +400,51 @@ describe('Numbers', function() {
       assert.equal((-9999).toOne(), 1);
       assert.equal((-2).toOne(), 1);
       assert.equal((-1).toOne(), 1);
-      assert.equal((0).toOne(), 1);
-      assert.equal((NaN).toOne(), 1);
       assert.equal((-0).toOne(), 1);
+      assert.equal((NaN).toOne(), 1);
+      assert.equal((0).toOne(), 1);
+      assert.equal((1).toOne(), 1);
+      assert.equal((2).toOne(), 1);
+      assert.equal((9999).toOne(), 1);
+      assert.equal((9999.9999).toOne(), 1);
+      assert.equal((9999e9999).toOne(), 1);
+      assert.equal((Infinity).toOne(), 1);
+    });
+  });
+
+
+  describe('#isZero()', function() {
+    it('should convert every number to zero', function() {
+      assert.equal((-Infinity).isZero(), false);
+      assert.equal((-9999e9999).isZero(), false);
+      assert.equal((-9999.9999).isZero(), false);
+      assert.equal((-9999).isZero(), false);
+      assert.equal((-2).isZero(), false);
+      assert.equal((-1).isZero(), false);
+      assert.equal((-0).isZero(), true);
+      assert.equal((NaN).isZero(), false);
+      assert.equal((0).isZero(), true);
+      assert.equal((1).isZero(), false);
+      assert.equal((2).isZero(), false);
+      assert.equal((9999).isZero(), false);
+      assert.equal((9999.9999).isZero(), false);
+      assert.equal((9999e9999).isZero(), false);
+      assert.equal((Infinity).isZero(), false);
+    });
+  });
+
+
+  describe('#isOne()', function() {
+    it('should convert every number to one', function() {
+      assert.equal((-Infinity).toOne(), 1);
+      assert.equal((-9999e9999).toOne(), 1);
+      assert.equal((-9999.9999).toOne(), 1);
+      assert.equal((-9999).toOne(), 1);
+      assert.equal((-2).toOne(), 1);
+      assert.equal((-1).toOne(), 1);
+      assert.equal((-0).toOne(), 1);
+      assert.equal((NaN).toOne(), 1);
+      assert.equal((0).toOne(), 1);
       assert.equal((1).toOne(), 1);
       assert.equal((2).toOne(), 1);
       assert.equal((9999).toOne(), 1);
@@ -400,15 +463,37 @@ describe('Numbers', function() {
       assert.deepEqual((-9999).toDigitsArray(), [9, 9, 9, 9]);
       assert.deepEqual((-2).toDigitsArray(), [2]);
       assert.deepEqual((-1).toDigitsArray(), [1]);
-      assert.deepEqual((0).toDigitsArray(), [0]);
-      assert.equal((NaN).toDigitsArray(), undefined);
       assert.deepEqual((-0).toDigitsArray(), [0]);
+      assert.equal((NaN).toDigitsArray(), undefined);
+      assert.deepEqual((0).toDigitsArray(), [0]);
       assert.deepEqual((1).toDigitsArray(), [1]);
       assert.deepEqual((2).toDigitsArray(), [2]);
       assert.deepEqual((9999).toDigitsArray(), [9, 9, 9, 9]);
       assert.deepEqual((9999.9999).toDigitsArray(), [9, 9, 9, 9, 9, 9, 9, 9]);
       assert.equal((9999e9999).toDigitsArray(), undefined);
       assert.equal((Infinity).toDigitsArray(), undefined);
+    });
+  });
+
+
+  /* Built-in */
+  describe('#toString()', function() {
+    it('should returns a string representing the number', function() {
+      assert.deepEqual((-Infinity).toString(), '-Infinity');
+      assert.deepEqual((-9999e9999).toString(), -Infinity);
+      assert.deepEqual((-9999.9999).toString(), '-9999.9999');
+      assert.deepEqual((-9999).toString(), '-9999');
+      assert.deepEqual((-2).toString(), '-2');
+      assert.deepEqual((-1).toString(), '-1');
+      assert.deepEqual((0).toString(), '0');
+      assert.deepEqual((NaN).toString(), 'NaN');
+      assert.deepEqual((-0).toString(), '0');
+      assert.deepEqual((1).toString(), '1');
+      assert.deepEqual((2).toString(), '2');
+      assert.deepEqual((9999).toString(), '9999');
+      assert.deepEqual((9999.9999).toString(), '9999.9999');
+      assert.deepEqual((9999e9999).toString(), 'Infinity');
+      assert.deepEqual((Infinity).toString(), 'Infinity');
     });
   });
 
