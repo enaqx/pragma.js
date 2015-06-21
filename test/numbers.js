@@ -31,6 +31,31 @@ describe('Numbers', function() {
   });
 
 
+  describe('#ceil()', function() {
+    it('should return the smallest integer greater than or equal', function() {
+      assert.equal((-Infinity).ceil(), -Infinity);
+      assert.equal((-9999e9999).ceil(), -Infinity);
+      assert.equal((-9999.9999).ceil(), -9999);
+      assert.equal((-9999).ceil(), -9999);
+      assert.equal((-2.0001).ceil(), -2);
+      assert.equal((-2).ceil(), -2);
+      assert.equal((-1).ceil(), -1);
+      assert.equal((-.95).ceil(), -0);
+      assert.equal((-0).ceil(), -0);
+      assert.deepEqual((NaN).ceil().toString(), NaN.ceil().toString());
+      assert.equal((0).ceil(), 0);
+      assert.equal((.95).ceil(), 1);
+      assert.equal((1).ceil(), 1);
+      assert.equal((2).ceil(), 2);
+      assert.equal((2.0001).ceil(), 3);
+      assert.equal((9999).ceil(), 9999);
+      assert.equal((9999.9999).ceil(), 10000);
+      assert.equal((9999e9999).ceil(), Infinity);
+      assert.equal((Infinity).ceil(), Infinity);
+    })
+  });
+
+
   describe('#negate()', function() {
     it('should return negate of number', function() {
       assert.equal((-Infinity).negate(), Infinity);
@@ -50,6 +75,33 @@ describe('Numbers', function() {
       assert.equal((Infinity).negate(), -Infinity);
     });
   });
+
+
+  describe('#countFromTo()', function() {
+    it('should return array from given number to argument value', function() {
+      assert.equal((-Infinity).countFrom(), undefined);
+      assert.equal((-9999e9999).countFrom(), undefined);
+      assert.equal((-9999.9999).countFrom(), undefined);
+      // assert.deepEqual((-8).countFrom(-2, 2), [0, -1, -2, -3, -4, -5, -6, -7, -8]);
+      assert.deepEqual((-8).countFrom(-2), [-2, -3, -4, -5, -6, -7, -8]);
+      assert.deepEqual((-4).countFrom(-2), [-2, -3, -4]);
+      assert.deepEqual((-2).countFrom(), [0, -1, -2]);
+      assert.deepEqual((-1).countFrom(), [0, -1]);
+      assert.deepEqual((-0).countFrom(), [0]);
+      assert.equal((NaN).countFrom(), undefined);
+      assert.deepEqual((0).countFrom(), [0]);
+      assert.deepEqual((1).countFrom(), [0, 1]);
+      assert.deepEqual((2).countFrom(), [0, 1, 2]);
+      assert.deepEqual((4).countFrom(2), [2, 3, 4]);
+      assert.deepEqual((4).countFrom(-2), [-2, -1, 0, 1, 2, 3, 4]);
+      assert.deepEqual((8).countFrom(), [0, 1, 2, 3, 4, 5, 6, 7, 8]);
+      assert.equal((9999.9999).countFrom(), undefined);
+      assert.equal((9999e9999).countFrom(), undefined);
+      assert.equal((Infinity).countFrom(), undefined);
+
+    });
+  });
+
 
   describe('#isEven()', function() {
     it('should return true then number is even', function() {
