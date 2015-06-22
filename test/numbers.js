@@ -567,6 +567,35 @@ describe('Numbers', function() {
   });
 
 
+  /* Built-in */
+  describe('#parseFloat()', function() {
+    it('should parse a string and return a floating point number', function() {
+      assert.equal(parseFloat('3.14'), 3.14);
+      assert.equal(parseFloat('314e-2'), 3.14);
+      assert.equal(parseFloat('0.0314E+2'), 3.14);
+      assert.equal(parseFloat('3.14more non-digit characters'), 3.14);
+      assert.equal(parseFloat('FF2').toString(), NaN.toString());
+    });
+  });
+
+
+  /* Built-in */
+  describe('#parseInt()', function() {
+    it('should parse a string and return an integer', function() {
+      assert.equal(parseInt('0xF', 16), 15);
+      assert.equal(parseInt('F', 16), 15);
+      assert.equal(parseInt('17', 8), 15);
+      assert.equal(parseInt('015', 10), 15);
+      assert.equal(parseInt('Hello', 8).toString(), NaN.toString());
+      assert.equal(parseInt('546', 2).toString(), NaN.toString());
+      assert.equal(parseInt('-F', 16), -15);
+      assert.equal(parseInt('-0F', 16), -15);
+      assert.equal(parseInt('-0XF', 16), -15);
+      assert.equal(parseInt(-15.1, 10), -15);
+    });
+  });
+
+
   describe('#toDigitsArray()', function() {
     it('should return arrays of digits of the given number', function() {
       assert.equal((-Infinity).toDigitsArray(), undefined);
