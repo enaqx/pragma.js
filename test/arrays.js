@@ -102,4 +102,11 @@ describe('Arrays', function() {
   });
 
 
+  describe('#random()', function() {
+    it('should return random element from array', function() {
+      assert.equal([].random(), undefined);
+      assert.ok([1, 2, 3].random());
+      assert.equal([1, 1, 1].random(), 1);
+    });
+  });
 });
