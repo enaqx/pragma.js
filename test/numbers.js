@@ -81,6 +81,31 @@ describe('Numbers', function() {
   });
 
 
+  describe('#round()', function() {
+    it('should return given number rounded to the nearest integer', function() {
+      assert.equal((-Infinity).round(), -Infinity);
+      assert.equal((-9999e9999).round(), -Infinity);
+      assert.equal((-9999.9999).round(), -10000);
+      assert.equal((-9999).round(), -9999);
+      assert.equal((-2.0001).round(), -2);
+      assert.equal((-2).round(), -2);
+      assert.equal((-1).round(), -1);
+      assert.equal((-.95).round(), -1);
+      assert.equal((-0).round(), -0);
+      assert.deepEqual((NaN).round().toString(), NaN.round().toString());
+      assert.equal((0).round(), 0);
+      assert.equal((.95).round(), 1);
+      assert.equal((1).round(), 1);
+      assert.equal((2).round(), 2);
+      assert.equal((2.0001).round(), 2);
+      assert.equal((9999).round(), 9999);
+      assert.equal((9999.9999).round(), 10000);
+      assert.equal((9999e9999).round(), Infinity);
+      assert.equal((Infinity).round(), Infinity);
+    })
+  });
+
+
   describe('#negate()', function() {
     it('should return negate of number', function() {
       assert.equal((-Infinity).negate(), Infinity);
