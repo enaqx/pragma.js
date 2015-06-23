@@ -122,6 +122,17 @@ describe('Arrays', function() {
 
 
   /* Built-in */
+  describe('#pop()', function() {
+    it('should remove the last element and returns that element', function() {
+      assert.deepEqual([1, 2, 3].pop(), 3);
+      assert.deepEqual([1, 2].pop(), 2);
+      assert.deepEqual([1].pop(), 1);
+      assert.equal([].pop(), undefined);
+    });
+  });
+
+
+  /* Built-in */
   describe('#push()', function() {
     it('should add elements to the end and return new one', function() {
       assert.deepEqual([].push(1), 1);
