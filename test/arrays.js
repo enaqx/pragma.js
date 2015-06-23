@@ -8,6 +8,15 @@ var assert = require('assert');
 
 describe('Arrays', function() {
 
+  describe('getLength()', function() {
+    it('should return length of array', function() {
+      assert.equal([].getLength(), 0);
+      assert.equal([1, 2, 3].getLength(), 3);
+      assert.equal(['a', 'b', 'c', 'd'].getLength(), 4);
+    });
+  });
+
+
   function firstArrayTest() {
     assert.equal([].first(), undefined);
     assert.equal([1, 2, 3].first(), 1);
