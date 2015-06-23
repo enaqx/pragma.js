@@ -121,6 +121,16 @@ describe('Arrays', function() {
   });
 
 
+  /* Built-in */
+  describe('#push()', function() {
+    it('should add elements to the end and return new one', function() {
+      assert.deepEqual([].push(1), 1);
+      assert.deepEqual([].push(1, 2), 2);
+      assert.deepEqual([].push(1, 2, 3), 3);
+    });
+  });
+
+
   describe('#random()', function() {
     it('should return random element from array', function() {
       assert.equal([].random(), undefined);
