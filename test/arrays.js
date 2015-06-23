@@ -8,7 +8,17 @@ var assert = require('assert');
 
 describe('Arrays', function() {
 
-  describe('getLength()', function() {
+  /* Built-in */
+  describe('#length', function() {
+    it('is the length of array', function() {
+      assert.equal([].length, 0);
+      assert.equal([1, 2, 3].length, 3);
+      assert.equal(['a', 'b', 'c', 'd'].length, 4);
+    });
+  });
+
+
+  describe('#getLength()', function() {
     it('should return length of array', function() {
       assert.equal([].getLength(), 0);
       assert.equal([1, 2, 3].getLength(), 3);

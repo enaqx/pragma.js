@@ -10,6 +10,24 @@ var assert = require('assert');
 
 describe('Strings', function() {
 
+  /* Built-in */
+  describe('#length', function() {
+    it('is the length of array', function() {
+      assert.equal('Hello World!'.length, 12);
+      assert.equal('123'.length, 3);
+      assert.equal('abcd'.length, 4);
+    });
+  });
+
+  describe('#getLength()', function() {
+    it('is the length of array', function() {
+      assert.equal('Hello World!'.getLength(), 12);
+      assert.equal('123'.getLength(), 3);
+      assert.equal('abcd'.getLength(), 4);
+    });
+  });
+
+
   describe('#toNumber()', function() {
     it('should convert given string to a number', function() {
       assert.equal(('-Infinity').toNumber(), -Infinity);
@@ -29,6 +47,7 @@ describe('Strings', function() {
       assert.equal(('Infinity').toNumber(), Infinity);
     });
   });
+
 
   describe('#toNumeronym()', function() {
     it('should return numeronym of string', function() {
