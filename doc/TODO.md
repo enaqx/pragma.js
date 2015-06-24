@@ -10,4 +10,5 @@ Arrays:
 String:
  * capitalize first letter
  * add #setLength() method
+ * add #uneval() method
  

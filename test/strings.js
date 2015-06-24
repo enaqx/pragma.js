@@ -10,6 +10,14 @@ var assert = require('assert');
 
 describe('Strings', function() {
 
+  describe('#eval()', function() {
+    it('should evaluates code of this string', function() {
+      assert.equal('1 + 1'.eval(), 2);
+      assert.deepEqual('new String("1 + 1")'.eval().valueOf(), '1 + 1');
+      assert.equal('var x = 5; var z; if (x == 5) z = 42;'.eval(), 42);
+    });
+  });
+
   /* Built-in */
   describe('#length', function() {
     it('is the length of array', function() {
