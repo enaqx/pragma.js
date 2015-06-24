@@ -149,4 +149,13 @@ describe('Arrays', function() {
       assert.equal([1, 1, 1].random(), 1);
     });
   });
+
+
+  describe('#toObject()', function() {
+    it('should convert array to object', function() {
+      assert.deepEqual([0, 1, 2].toObject(), {'0': 0, '1': 1, '2': 2});
+      assert.deepEqual(['a', 'b'].toObject(), {'0': 'a', '1': 'b'});
+    });
+  });
+
 });
