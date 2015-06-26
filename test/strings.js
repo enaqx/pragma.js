@@ -38,6 +38,32 @@ describe('Strings', function() {
   });
 
 
+  describe('#decodeURI()', function() {
+    it('should decode URI according to RFC3986', function() {
+      assert.deepEqual('my%20test.asp?name=st%C3%A5le&car=saab'
+        .decodeURI(), 'my test.asp?name=ståle&car=saab');
+    });
+  });
+
+
+  describe('#decodeURIComponent()', function() {
+    it('should decode URI component according to RFC3986', function() {
+      assert.deepEqual('JavaScript_%D1%88%D0%B5%D0%BB%D0%BB%D1%8B'
+            .decodeURIComponent(), 'JavaScript_шеллы');
+    });
+  });
+
+
+  describe('#encodeURIComponent()', function() {
+    it('should encode URI component according to RFC3986', function() {
+      assert.deepEqual('http://w3schools.com/my test.asp?name=ståle&car=saab'
+        .encodeURIComponent(), 'http%3A%2F%2Fw3schools.com%2Fmy%20test.a'
+        + 'sp%3Fname%3Dst%C3%A5le%26car%3Dsaab');
+      assert.equal('\uD800'.encodeURIComponent(), undefined);
+    });
+  });
+
+
   /* Built-in */
   describe('#length', function() {
     it('is the length of array', function() {
