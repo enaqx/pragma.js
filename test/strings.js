@@ -11,12 +11,32 @@ var assert = require('assert');
 describe('Strings', function() {
 
   describe('#eval()', function() {
-    it('should evaluates code of this string', function() {
+    it('should evaluate code of this string', function() {
       assert.equal('1 + 1'.eval(), 2);
       assert.deepEqual('new String("1 + 1")'.eval().valueOf(), '1 + 1');
       assert.equal('var x = 5; var z; if (x == 5) z = 42;'.eval(), 42);
     });
   });
+
+
+  describe('#encodeURI()', function() {
+    it('should encode URI according to RFC3986', function() {
+      assert.deepEqual('my test.asp?name=ståle&car=saab'
+            .encodeURI(), 'my%20test.asp?name=st%C3%A5le&car=saab');
+      assert.equal('\uD800'.encodeURI(), undefined);
+    });
+  });
+
+
+  describe('#encodeURIComponent()', function() {
+    it('should encode URI component according to RFC3986', function() {
+      assert.deepEqual('http://w3schools.com/my test.asp?name=ståle&car=saab'
+            .encodeURIComponent(), 'http%3A%2F%2Fw3schools.com%2Fmy%20test.a'
+                        + 'sp%3Fname%3Dst%C3%A5le%26car%3Dsaab');
+      assert.equal('\uD800'.encodeURIComponent(), undefined);
+    });
+  });
+
 
   /* Built-in */
   describe('#length', function() {
@@ -28,7 +48,7 @@ describe('Strings', function() {
   });
 
   describe('#getLength()', function() {
-    it('is the length of array', function() {
+    it('should return the length of array', function() {
       assert.equal('Hello World!'.getLength(), 12);
       assert.equal('123'.getLength(), 3);
       assert.equal('abcd'.getLength(), 4);
