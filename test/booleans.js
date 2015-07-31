@@ -3,10 +3,8 @@
  */
 'use strict';
 
-
-require('../pragma');
-var assert = require('assert');
-
+import * as assert from 'assert';
+import { pragmaBooleans } from '../pragma';
 
 describe('Booleans', function() {
 

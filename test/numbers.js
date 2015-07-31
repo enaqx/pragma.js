@@ -3,10 +3,8 @@
  */
 'use strict';
 
-
-var assert = require('assert');
-require('../pragma');
-
+import * as assert from 'assert';
+import { pragmaNumbers } from '../pragma';
 
 describe('Numbers', function() {
 

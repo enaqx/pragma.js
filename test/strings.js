@@ -3,10 +3,8 @@
  */
 'use strict';
 
-
-import '../pragma';
-import assert from 'assert';
-
+import * as assert from 'assert';
+import { pragmaStrings } from '../pragma';
 
 describe('Strings', () => {
 
