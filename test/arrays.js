@@ -6,11 +6,11 @@
 import * as assert from 'assert';
 import { pragmaArrays } from '../pragma';
 
-describe('Arrays', function() {
+describe('Arrays', () => {
 
   /* Built-in */
-  describe('#length', function() {
-    it('is the length of array', function() {
+  describe('#length', () => {
+    it('is the length of array', () => {
       assert.equal([].length, 0);
       assert.equal([1, 2, 3].length, 3);
       assert.equal(['a', 'b', 'c', 'd'].length, 4);
@@ -18,8 +18,8 @@ describe('Arrays', function() {
   });
 
 
-  describe('#getLength()', function() {
-    it('should return length of array', function() {
+  describe('#getLength()', () => {
+    it('should return length of array', () => {
       assert.equal([].getLength(), 0);
       assert.equal([1, 2, 3].getLength(), 3);
       assert.equal(['a', 'b', 'c', 'd'].getLength(), 4);
@@ -39,18 +39,18 @@ describe('Arrays', function() {
     assert.deepEqual(['a', 'b', 'c'].first(1), ['a']);
     assert.deepEqual(['a', 'b', 'c'].first(2), ['a', 'b']);
   }
-  describe('#first()', function() {
-    it('should return the first element of array', function() {
+  describe('#first()', () => {
+    it('should return the first element of array', () => {
       firstArrayTest();
     });
   });
-  describe('#head()', function() {
-    it('should return the first element of array', function() {
+  describe('#head()', () => {
+    it('should return the first element of array', () => {
       firstArrayTest();
     });
   });
-  describe('#take()', function() {
-    it('should return the first element of array', function() {
+  describe('#take()', () => {
+    it('should return the first element of array', () => {
       firstArrayTest();
     });
   });
@@ -67,8 +67,8 @@ describe('Arrays', function() {
     assert.deepEqual(['a', 'b', 'c'].initial(1), ['a', 'b']);
     assert.deepEqual(['a', 'b', 'c'].initial(2), ['a']);
   }
-  describe('#initial()', function() {
-    it('should return everything but the first entry of the array', function() {
+  describe('#initial()', () => {
+    it('should return everything but the first entry of the array', () => {
       initialArrayTest();
     });
   });
@@ -85,8 +85,8 @@ describe('Arrays', function() {
     assert.deepEqual(['a', 'b', 'c'].last(1), ['c']);
     assert.deepEqual(['a', 'b', 'c'].last(2), ['b', 'c']);
   }
-  describe('#last()', function() {
-    it('should return the last element of array', function() {
+  describe('#last()', () => {
+    it('should return the last element of array', () => {
       lastArrayTest();
     });
   });
@@ -104,26 +104,26 @@ describe('Arrays', function() {
     assert.deepEqual(['a', 'b', 'c'].rest(1), ['b', 'c']);
     assert.deepEqual(['a', 'b', 'c'].rest(2), ['c']);
   }
-  describe('#rest()', function() {
-    it('should return everything but the first entry of the array', function() {
+  describe('#rest()', () => {
+    it('should return everything but the first entry of the array', () => {
       restArrayTest();
     });
   });
-  describe('#tail()', function() {
-    it('should return everything but the first entry of the array', function() {
+  describe('#tail()', () => {
+    it('should return everything but the first entry of the array', () => {
       restArrayTest();
     });
   });
-  describe('#drop()', function() {
-    it('should return everything but the first entry of the array', function() {
+  describe('#drop()', () => {
+    it('should return everything but the first entry of the array', () => {
       restArrayTest();
     });
   });
 
 
   /* Built-in */
-  describe('#pop()', function() {
-    it('should remove the last element and returns that element', function() {
+  describe('#pop()', () => {
+    it('should remove the last element and returns that element', () => {
       assert.deepEqual([1, 2, 3].pop(), 3);
       assert.deepEqual([1, 2].pop(), 2);
       assert.deepEqual([1].pop(), 1);
@@ -133,8 +133,8 @@ describe('Arrays', function() {
 
 
   /* Built-in */
-  describe('#push()', function() {
-    it('should add elements to the end and return new one', function() {
+  describe('#push()', () => {
+    it('should add elements to the end and return new one', () => {
       assert.deepEqual([].push(1), 1);
       assert.deepEqual([].push(1, 2), 2);
       assert.deepEqual([].push(1, 2, 3), 3);
@@ -142,8 +142,8 @@ describe('Arrays', function() {
   });
 
 
-  describe('#random()', function() {
-    it('should return random element from array', function() {
+  describe('#random()', () => {
+    it('should return random element from array', () => {
       assert.equal([].random(), undefined);
       assert.ok([1, 2, 3].random());
       assert.equal([1, 1, 1].random(), 1);
@@ -151,8 +151,8 @@ describe('Arrays', function() {
   });
 
 
-  describe('#toObject()', function() {
-    it('should convert array to object', function() {
+  describe('#toObject()', () => {
+    it('should convert array to object', () => {
       assert.deepEqual([0, 1, 2].toObject(), {'0': 0, '1': 1, '2': 2});
       assert.deepEqual(['a', 'b'].toObject(), {'0': 'a', '1': 'b'});
     });
