@@ -6,10 +6,10 @@
 import * as assert from 'assert';
 import { pragmaNumbers } from '../pragma';
 
-describe('Numbers', function() {
+describe('Numbers', () => {
 
-  describe('#abs()', function() {
-    it('should return the absolute value of a number', function() {
+  describe('#abs()', () => {
+    it('should return the absolute value of a number', () => {
       assert.equal((-Infinity).abs(), Infinity);
       assert.equal((-9999e9999).abs(), Infinity);
       assert.equal((-9999.9999).abs(), 9999.9999);
@@ -29,8 +29,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#ceil()', function() {
-    it('should return the smallest integer greater than or equal', function() {
+  describe('#ceil()', () => {
+    it('should return the smallest integer greater than or equal', () => {
       assert.equal((-Infinity).ceil(), -Infinity);
       assert.equal((-9999e9999).ceil(), -Infinity);
       assert.equal((-9999.9999).ceil(), -9999);
@@ -54,8 +54,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#floor()', function() {
-    it('should return the largest integer less than or equal', function() {
+  describe('#floor()', () => {
+    it('should return the largest integer less than or equal', () => {
       assert.equal((-Infinity).floor(), -Infinity);
       assert.equal((-9999e9999).floor(), -Infinity);
       assert.equal((-9999.9999).floor(), -10000);
@@ -79,8 +79,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#round()', function() {
-    it('should return given number rounded to the nearest integer', function() {
+  describe('#round()', () => {
+    it('should return given number rounded to the nearest integer', () => {
       assert.equal((-Infinity).round(), -Infinity);
       assert.equal((-9999e9999).round(), -Infinity);
       assert.equal((-9999.9999).round(), -10000);
@@ -104,8 +104,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#negate()', function() {
-    it('should return negate of number', function() {
+  describe('#negate()', () => {
+    it('should return negate of number', () => {
       assert.equal((-Infinity).negate(), Infinity);
       assert.equal((-9999e9999).negate(), Infinity);
       assert.equal((-9999.9999).negate(), 9999.9999);
@@ -125,12 +125,11 @@ describe('Numbers', function() {
   });
 
 
-  describe('#countFromTo()', function() {
-    it('should return array from given number to argument value', function() {
+  describe('#countFromTo()', () => {
+    it('should return array from given number to argument value', () => {
       assert.equal((-Infinity).countFrom(), undefined);
       assert.equal((-9999e9999).countFrom(), undefined);
       assert.equal((-9999.9999).countFrom(), undefined);
-      // assert.deepEqual((-8).countFrom(-2, 2), [0, -1, -2, -3, -4, -5, -6, -7, -8]);
       assert.deepEqual((-8).countFrom(-2), [-2, -3, -4, -5, -6, -7, -8]);
       assert.deepEqual((-4).countFrom(-2), [-2, -3, -4]);
       assert.deepEqual((-2).countFrom(), [0, -1, -2]);
@@ -151,8 +150,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isEven()', function() {
-    it('should return true then number is even', function() {
+  describe('#isEven()', () => {
+    it('should return true then number is even', () => {
       assert.equal((-Infinity).isEven(), undefined);
       assert.equal((-9999e9999).isEven(), undefined);
       assert.equal((-9999.9999).isEven(), undefined);
@@ -172,8 +171,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isOdd()', function() {
-    it('should return true then number is odd', function() {
+  describe('#isOdd()', () => {
+    it('should return true then number is odd', () => {
       assert.equal((-Infinity).isOdd(), undefined);
       assert.equal((-9999e9999).isOdd(), undefined);
       assert.equal((-9999.9999).isOdd(), undefined);
@@ -194,8 +193,8 @@ describe('Numbers', function() {
 
 
   /* Built-in */
-  describe('#isFinite()', function() {
-    it('should return true on finite number in argument', function() {
+  describe('#isFinite()', () => {
+    it('should return true on finite number in argument', () => {
       assert.equal(Number.isFinite(-Infinity), false);
       assert.equal(Number.isFinite(-9999e9999), false);
       assert.equal(Number.isFinite(-9999.9999), true);
@@ -215,8 +214,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isFiniteNumber()', function() {
-    it('should return true on finite number', function() {
+  describe('#isFiniteNumber()', () => {
+    it('should return true on finite number', () => {
       assert.equal((-Infinity).isFiniteNumber(), false);
       assert.equal((-9999e9999).isFiniteNumber(), false);
       assert.equal((-9999.9999).isFiniteNumber(), true);
@@ -236,8 +235,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isNotFiniteNumber()', function() {
-    it('should return true on not finite number', function() {
+  describe('#isNotFiniteNumber()', () => {
+    it('should return true on not finite number', () => {
       assert.equal((-Infinity).isNotFiniteNumber(), true);
       assert.equal((-9999e9999).isNotFiniteNumber(), true);
       assert.equal((-9999.9999).isNotFiniteNumber(), false);
@@ -257,8 +256,8 @@ describe('Numbers', function() {
   });
 
   /* Built-in */
-  describe('#isInteger()', function() {
-    it('should return true on integer number in argument', function() {
+  describe('#isInteger()', () => {
+    it('should return true on integer number in argument', () => {
       assert.equal(Number.isInteger(-Infinity), false);
       assert.equal(Number.isInteger(-9999e9999), false);
       assert.equal(Number.isInteger(-9999.9999), false);
@@ -278,8 +277,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isIntegerNumber()', function() {
-    it('should return true on integer number', function() {
+  describe('#isIntegerNumber()', () => {
+    it('should return true on integer number', () => {
       assert.equal((-Infinity).isIntegerNumber(), false);
       assert.equal((-9999e9999).isIntegerNumber(), false);
       assert.equal((-9999.9999).isIntegerNumber(), false);
@@ -299,8 +298,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isNotIntegerNumber()', function() {
-    it('should return false on integer number', function() {
+  describe('#isNotIntegerNumber()', () => {
+    it('should return false on integer number', () => {
       assert.equal((-Infinity).isNotIntegerNumber(), true);
       assert.equal((-9999e9999).isNotIntegerNumber(), true);
       assert.equal((-9999.9999).isNotIntegerNumber(), true);
@@ -321,8 +320,8 @@ describe('Numbers', function() {
 
 
   /* Built-in */
-  describe('#isNaN()', function() {
-    it('should return true on NaN in argument', function() {
+  describe('#isNaN()', () => {
+    it('should return true on NaN in argument', () => {
       assert.equal(Number.isNaN(-Infinity), false);
       assert.equal(Number.isNaN(-9999e9999), false);
       assert.equal(Number.isNaN(-9999.9999), false);
@@ -345,8 +344,8 @@ describe('Numbers', function() {
 
 
   /* Built-in */
-  describe('#isNotNumber()', function() {
-    it('should return true on NaN', function() {
+  describe('#isNotNumber()', () => {
+    it('should return true on NaN', () => {
       assert.equal((-Infinity).isNotNumber(), false);
       assert.equal((-9999e9999).isNotNumber(), false);
       assert.equal((-9999.9999).isNotNumber(), false);
@@ -368,8 +367,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isPrime()', function() {
-    it('should return true on prime number', function() {
+  describe('#isPrime()', () => {
+    it('should return true on prime number', () => {
       assert.equal((-Infinity).isPrime(), undefined);
       assert.equal((-9999e9999).isPrime(), undefined);
       assert.equal((-9999.9999).isPrime(), undefined);
@@ -393,8 +392,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isPositive()', function() {
-    it('should return true on positive number', function() {
+  describe('#isPositive()', () => {
+    it('should return true on positive number', () => {
       assert.equal((-Infinity).isPositive(), false);
       assert.equal((-9999e9999).isPositive(), false);
       assert.equal((-9999.9999).isPositive(), false);
@@ -416,8 +415,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isNegative()', function() {
-    it('should return true on negative number', function() {
+  describe('#isNegative()', () => {
+    it('should return true on negative number', () => {
       assert.equal((-Infinity).isNegative(), true);
       assert.equal((-9999e9999).isNegative(), true);
       assert.equal((-9999.9999).isNegative(), true);
@@ -439,8 +438,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#parity()', function() {
-    it('should return 0 on even and 1 on odd number', function() {
+  describe('#parity()', () => {
+    it('should return 0 on even and 1 on odd number', () => {
       assert.equal((-Infinity).parity(), undefined);
       assert.equal((-9999e9999).parity(), undefined);
       assert.equal((-9999.9999).parity(), undefined);
@@ -460,8 +459,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#parityOfNumber()', function() {
-    it('should return parity of number as string', function() {
+  describe('#parityOfNumber()', () => {
+    it('should return parity of number as string', () => {
       assert.equal((-Infinity).parityOfNumber(), undefined);
       assert.equal((-9999e9999).parityOfNumber(), undefined);
       assert.equal((-9999.9999).parityOfNumber(), undefined);
@@ -481,8 +480,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#toZero()', function() {
-    it('should convert every number to zero', function() {
+  describe('#toZero()', () => {
+    it('should convert every number to zero', () => {
       assert.equal((-Infinity).toZero(), 0);
       assert.equal((-9999e9999).toZero(), 0);
       assert.equal((-9999.9999).toZero(), 0);
@@ -502,8 +501,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#toOne()', function() {
-    it('should convert every number to one', function() {
+  describe('#toOne()', () => {
+    it('should convert every number to one', () => {
       assert.equal((-Infinity).toOne(), 1);
       assert.equal((-9999e9999).toOne(), 1);
       assert.equal((-9999.9999).toOne(), 1);
@@ -523,8 +522,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isZero()', function() {
-    it('should convert every number to zero', function() {
+  describe('#isZero()', () => {
+    it('should convert every number to zero', () => {
       assert.equal((-Infinity).isZero(), false);
       assert.equal((-9999e9999).isZero(), false);
       assert.equal((-9999.9999).isZero(), false);
@@ -544,8 +543,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#isOne()', function() {
-    it('should convert every number to one', function() {
+  describe('#isOne()', () => {
+    it('should convert every number to one', () => {
       assert.equal((-Infinity).toOne(), 1);
       assert.equal((-9999e9999).toOne(), 1);
       assert.equal((-9999.9999).toOne(), 1);
@@ -566,8 +565,8 @@ describe('Numbers', function() {
 
 
   /* Built-in */
-  describe('#parseFloat()', function() {
-    it('should parse a string and return a floating point number', function() {
+  describe('#parseFloat()', () => {
+    it('should parse a string and return a floating point number', () => {
       assert.equal(parseFloat('3.14'), 3.14);
       assert.equal(parseFloat('314e-2'), 3.14);
       assert.equal(parseFloat('0.0314E+2'), 3.14);
@@ -578,8 +577,8 @@ describe('Numbers', function() {
 
 
   /* Built-in */
-  describe('#parseInt()', function() {
-    it('should parse a string and return an integer', function() {
+  describe('#parseInt()', () => {
+    it('should parse a string and return an integer', () => {
       assert.equal(parseInt('0xF', 16), 15);
       assert.equal(parseInt('F', 16), 15);
       assert.equal(parseInt('17', 8), 15);
@@ -594,8 +593,8 @@ describe('Numbers', function() {
   });
 
 
-  describe('#toDigitsArray()', function() {
-    it('should return arrays of digits of the given number', function() {
+  describe('#toDigitsArray()', () => {
+    it('should return arrays of digits of the given number', () => {
       assert.equal((-Infinity).toDigitsArray(), undefined);
       assert.deepEqual((-9999e9999).toDigitsArray(), undefined);
       assert.deepEqual((-9999.9999).toDigitsArray(), [9, 9, 9, 9, 9, 9, 9, 9]);
@@ -616,8 +615,8 @@ describe('Numbers', function() {
 
 
   /* Built-in */
-  describe('#toString()', function() {
-    it('should returns a string representing the number', function() {
+  describe('#toString()', () => {
+    it('should returns a string representing the number', () => {
       assert.deepEqual((-Infinity).toString(), '-Infinity');
       assert.deepEqual((-9999e9999).toString(), -Infinity);
       assert.deepEqual((-9999.9999).toString(), '-9999.9999');
