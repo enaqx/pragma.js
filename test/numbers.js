@@ -1,7 +1,6 @@
 /**
  * Number test
  */
-'use strict';
 
 import * as assert from 'assert';
 import { pragmaNumbers } from '../pragma';

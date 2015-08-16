@@ -1,7 +1,6 @@
 /**
  * Boolean test
  */
-'use strict';
 
 import * as assert from 'assert';
 import { pragmaBooleans } from '../pragma';

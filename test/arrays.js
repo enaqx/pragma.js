@@ -1,7 +1,6 @@
 /**
  * Array test
  */
-'use strict';
 
 import * as assert from 'assert';
 import { pragmaArrays } from '../pragma';

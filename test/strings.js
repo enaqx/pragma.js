@@ -1,7 +1,6 @@
 /**
  * String test
  */
-'use strict';
 
 import * as assert from 'assert';
 import { pragmaStrings } from '../pragma';
