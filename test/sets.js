@@ -5,7 +5,7 @@
 import * as assert from 'assert';
 import { pragmaSets } from '../pragma';
 
-describe.only('Sets', () => {
+describe('Sets', () => {
 
   /* Built-in */
   describe('#size', () => {
@@ -19,6 +19,13 @@ describe.only('Sets', () => {
   describe('#add()', () => {
     it('should appends a new element to a set', () => {
       assert.deepEqual(new Set().add(1).add(2).add(3).toArray(), [1, 2, 3]);
+    });
+  });
+
+
+  describe('#addValues()', () => {
+    it('should appends a new element to a set', () => {
+      assert.deepEqual(new Set().addValues(1, 2, 3).toArray(), [1, 2, 3]);
     });
   });
 
