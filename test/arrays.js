@@ -16,6 +16,18 @@ describe('Arrays', () => {
   });
 
 
+  /* Built-in */
+  describe('#from()', () => {
+    it('creates a new array from an array-like or iterable object', () => {
+      assert.deepEqual(Array.from(new Set(['foo', 'bar'])), ['foo', 'bar']);
+      assert.deepEqual(Array.from(new Map([[1, 2], [2, 4]])), [[1, 2], [2, 4]]);
+      assert.deepEqual(Array.from('string'), ['s', 't', 'r', 'i', 'n', 'g']);
+      assert.deepEqual(Array.from([1, 2, 3], x => x + x), [2, 4, 6]);
+      assert.deepEqual(Array.from({length: 5}, (v, k) => k), [0, 1, 2, 3, 4]);
+    });
+  });
+
+
   describe('#getLength()', () => {
     it('should return length of array', () => {
       assert.equal([].getLength(), 0);

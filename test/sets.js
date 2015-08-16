@@ -5,7 +5,7 @@
  import * as assert from 'assert';
  import { pragmaSets } from '../pragma';
 
- describe.only('Sets', () => {
+ describe('Sets', () => {
 
    describe('#toArray()', () => {
     it('should convert set to array', () => {
