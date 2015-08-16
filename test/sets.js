@@ -24,7 +24,7 @@ describe('Sets', () => {
 
 
   describe('#addValues()', () => {
-    it('should appends a new element to a set', () => {
+    it('should appends a new elements to a set', () => {
       assert.deepEqual(new Set().addValues(1, 2, 3).toArray(), [1, 2, 3]);
     });
   });
