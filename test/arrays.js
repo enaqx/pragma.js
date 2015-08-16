@@ -6,7 +6,6 @@ import * as assert from 'assert';
 import { pragmaArrays } from '../pragma';
 
 describe('Arrays', () => {
-
   /* Built-in */
   describe('#length', () => {
     it('is the length of array', () => {
@@ -156,5 +155,4 @@ describe('Arrays', () => {
       assert.deepEqual(['a', 'b'].toObject(), {'0': 'a', '1': 'b'});
     });
   });
-
 });
