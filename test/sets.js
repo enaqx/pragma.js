@@ -68,7 +68,8 @@ describe('Sets', () => {
   describe('#deleteList()', () => {
     it('should remove list of elements from a set', () => {
       var set = new Set([1, 2 ,3, 4]);
-      set.deleteList([1, 3]);
+      assert.equal(set.deleteList([1, 3]), true);
+      assert.equal(set.deleteList([5, 6]), false);
       assert.deepEqual(set.toArray(), [2, 4]);
     });
   });
@@ -77,7 +78,8 @@ describe('Sets', () => {
   describe('#deleteValues()', () => {
     it('should remove the specified elements from a set', () => {
       var set = new Set([1, 2 ,3]);
-      set.deleteValues(1, 3);
+      assert.equal(set.deleteValues(1, 3), true);
+      assert.equal(set.deleteValues(5, 6), false);
       assert.deepEqual(set.toArray(), [2]);
     });
   });
