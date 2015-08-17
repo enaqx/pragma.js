@@ -43,6 +43,17 @@ describe('Sets', () => {
   });
 
 
+  /* Built-in */
+  describe('#entries()', () => {
+    it('should return object that contains an array of [value, value]', () => {
+      var setIterator = new Set([1, 2 ,3]).entries();
+      assert.deepEqual(setIterator.next().value, [1, 1]);
+      assert.deepEqual(setIterator.next().value, [2, 2]);
+      assert.deepEqual(setIterator.next().value, [3, 3]);
+    });
+  });
+
+
   describe('#addValues()', () => {
     it('should append a new elements to a set', () => {
       assert.deepEqual(new Set().addValues(1, 2, 3).toArray(), [1, 2, 3]);
