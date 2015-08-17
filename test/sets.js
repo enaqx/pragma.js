@@ -65,6 +65,15 @@ describe('Sets', () => {
   });
 
 
+  describe('#deleteValues()', () => {
+    it('should removes the specified elements from a set', () => {
+      var set = new Set([1, 2 ,3]);
+      set.deleteValues(1, 3);
+      assert.deepEqual(set.toArray(), [2]);
+    });
+  });
+
+
   describe('#remove()', () => {
     it('should return set without specified element', () => {
       var set = new Set([1, 2 ,3]);
