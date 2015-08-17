@@ -83,6 +83,14 @@ describe('Arrays', () => {
     });
   });
 
+  describe('#isEmpty()', () => {
+    it('should return true on empty list', () => {
+      assert.equal([].isEmpty(), true);
+      assert.equal([1, 2, 3].isEmpty(), false);
+      assert.equal([1.1, 1.2, 1.3].isEmpty(), false);
+    });
+  });
+
   function lastArrayTest() {
     assert.equal([].last(), undefined);
     assert.equal([1, 2, 3].last(), 3);
@@ -157,6 +165,14 @@ describe('Arrays', () => {
       assert.equal([].random(), undefined);
       assert.ok([1, 2, 3].random());
       assert.equal([1, 1, 1].random(), 1);
+    });
+  });
+
+
+  describe('#sum()', () => {
+    it('should return sum of all elements from array', () => {
+      assert.equal([].sum(), 0);
+      assert.equal([1, 2, 3].sum(), 6);
     });
   });
 
