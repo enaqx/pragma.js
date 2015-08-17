@@ -93,6 +93,22 @@ describe('Sets', () => {
   });
 
 
+  describe('#removeList()', () => {
+    it('should return set without specified elements', () => {
+      var set = new Set([1, 2 ,3, 4]);
+      assert.deepEqual(set.removeList([1, 3]).toArray(), [2, 4]);
+    });
+  });
+
+
+  describe('#removeValues()', () => {
+    it('should return set without list of elemens', () => {
+      var set = new Set([1, 2 ,3]);
+      assert.deepEqual(set.removeValues(1, 3).toArray(), [2]);
+    });
+  });
+
+
   describe('#purge()', () => {
     it('should remove all elements and return empty set', () => {
       assert.deepEqual(new Set([1, 2 ,3]).purge().toArray(), []);
