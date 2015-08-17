@@ -65,6 +65,14 @@ describe('Sets', () => {
   });
 
 
+  describe('#remove()', () => {
+    it('should return set without specified element', () => {
+      var set = new Set([1, 2 ,3]);
+      assert.deepEqual(set.remove(1).toArray(), [2, 3]);
+    });
+  });
+
+
   describe('#purge()', () => {
     it('should remove all elements and return empty set', () => {
       assert.deepEqual(new Set([1, 2 ,3]).purge().toArray(), []);
