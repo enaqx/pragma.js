@@ -35,7 +35,7 @@ describe('Sets', () => {
 
   /* Built-in */
   describe('#delete()', () => {
-    it('should removes the specified element from a set', () => {
+    it('should remove the specified element from a set', () => {
       var set = new Set([1, 2 ,3]);
       set.delete(1);
       assert.deepEqual(set.toArray(), [2, 3]);
@@ -44,7 +44,7 @@ describe('Sets', () => {
 
 
   describe('#addValues()', () => {
-    it('should appends a new elements to a set', () => {
+    it('should append a new elements to a set', () => {
       assert.deepEqual(new Set().addValues(1, 2, 3).toArray(), [1, 2, 3]);
     });
   });
@@ -65,8 +65,17 @@ describe('Sets', () => {
   });
 
 
+  describe('#deleteList()', () => {
+    it('should remove list of elements from a set', () => {
+      var set = new Set([1, 2 ,3, 4]);
+      set.deleteList([1, 3]);
+      assert.deepEqual(set.toArray(), [2, 4]);
+    });
+  });
+
+
   describe('#deleteValues()', () => {
-    it('should removes the specified elements from a set', () => {
+    it('should remove the specified elements from a set', () => {
       var set = new Set([1, 2 ,3]);
       set.deleteValues(1, 3);
       assert.deepEqual(set.toArray(), [2]);
