@@ -28,6 +28,24 @@ describe('Arrays', () => {
   });
 
 
+  /* Built-in */
+  describe('#isArray()', () => {
+    it('return true if an object is an array', () => {
+      assert.equal(Array.isArray([]), true);
+      assert.equal(Array.isArray([1]), true);
+      assert.equal(Array.isArray([1, 2, 3]), true);
+      assert.equal(Array.isArray(['foo', 'bar']), true);
+      assert.equal(Array.isArray([[1, 2], [2, 4]]), true);
+      assert.equal(Array.isArray(new Array()), true);
+      assert.equal(Array.isArray(Array.prototype), true);
+      assert.equal(Array.isArray(null), false);
+      assert.equal(Array.isArray(1), false);
+      assert.equal(Array.isArray('foo'), false);
+      assert.equal(Array.isArray({'foo': 'bar'}), false);
+    });
+  });
+
+
   describe('#getLength()', () => {
     it('should return length of array', () => {
       assert.equal([].getLength(), 0);
