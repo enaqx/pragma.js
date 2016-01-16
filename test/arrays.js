@@ -46,6 +46,17 @@ describe('Arrays', () => {
   });
 
 
+  /* Buil-in */
+  describe('#of()', () => {
+    it('creates a new array with a variable number of arguments', () => {
+      assert.deepEqual(Array.of(1), [1]);
+      assert.deepEqual(Array.of(1, 2, 3), [1, 2 ,3]);
+      assert.deepEqual(Array.of(undefined), [undefined]);
+      assert.deepEqual(Array.of(undefined, undefined), [undefined, undefined]);
+    });
+  });
+
+
   describe('#getLength()', () => {
     it('should return length of array', () => {
       assert.equal([].getLength(), 0);
