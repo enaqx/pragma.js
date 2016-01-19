@@ -1,12 +1,17 @@
 /**
- * Array test
- */
+  * Array test
+  */
 
-import * as assert from 'assert';
+import assert from 'assert';
 import { pragmaArrays } from '../pragma';
 
+
 describe('Arrays', () => {
-  /* Built-in */
+
+  /**
+    * Built-in methods
+    */
+
   describe('#length', () => {
     it('is the length of array', () => {
       assert.equal([].length, 0);
@@ -16,7 +21,6 @@ describe('Arrays', () => {
   });
 
 
-  /* Built-in */
   describe('#from()', () => {
     it('creates a new array from an array-like or iterable object', () => {
       assert.deepEqual(Array.from(new Set(['foo', 'bar'])), ['foo', 'bar']);
@@ -28,7 +32,6 @@ describe('Arrays', () => {
   });
 
 
-  /* Built-in */
   describe('#isArray()', () => {
     it('return true if the argument is an array', () => {
       assert.equal(Array.isArray([]), true);
@@ -46,7 +49,6 @@ describe('Arrays', () => {
   });
 
 
-  /* Buil-in */
   describe('#of()', () => {
     it('creates a new array with a variable number of arguments', () => {
       assert.deepEqual(Array.of(1), [1]);
@@ -56,6 +58,38 @@ describe('Arrays', () => {
     });
   });
 
+
+  describe('#concat()', () => {
+    it('returns a new array joined with value provided as arguments', () => {
+      assert.deepEqual(['a', 'b'].concat([1, 2]), ['a', 'b', 1, 2]);
+      assert.deepEqual([1, 2, 3].concat(4, [5 , 6]), [1, 2, 3, 4, 5, 6]);
+      assert.deepEqual([undefined].concat([undefined]), [undefined, undefined]);
+    });
+  });
+
+
+  describe('#pop()', () => {
+    it('should remove the last element and returns that element', () => {
+      assert.deepEqual([1, 2, 3].pop(), 3);
+      assert.deepEqual([1, 2].pop(), 2);
+      assert.deepEqual([1].pop(), 1);
+      assert.equal([].pop(), undefined);
+    });
+  });
+
+
+  describe('#push()', () => {
+    it('should add elements to the end and return new one', () => {
+      assert.deepEqual([].push(1), 1);
+      assert.deepEqual([].push(1, 2), 2);
+      assert.deepEqual([].push(1, 2, 3), 3);
+    });
+  });
+
+
+  /**
+    * Pragma.js methods
+    */
 
   describe('#getLength()', () => {
     it('should return length of array', () => {
@@ -78,21 +112,25 @@ describe('Arrays', () => {
     assert.deepEqual(['a', 'b', 'c'].first(1), ['a']);
     assert.deepEqual(['a', 'b', 'c'].first(2), ['a', 'b']);
   }
+
   describe('#first()', () => {
     it('should return the first element of array', () => {
       firstArrayTest();
     });
   });
+
   describe('#head()', () => {
     it('should return the first element of array', () => {
       firstArrayTest();
     });
   });
+
   describe('#take()', () => {
     it('should return the first element of array', () => {
       firstArrayTest();
     });
   });
+
 
   function initialArrayTest() {
     assert.equal([].initial(), undefined);
@@ -106,11 +144,13 @@ describe('Arrays', () => {
     assert.deepEqual(['a', 'b', 'c'].initial(1), ['a', 'b']);
     assert.deepEqual(['a', 'b', 'c'].initial(2), ['a']);
   }
+
   describe('#initial()', () => {
     it('should return everything but the first entry of the array', () => {
       initialArrayTest();
     });
   });
+
 
   describe('#isEmpty()', () => {
     it('should return true on empty list', () => {
@@ -119,6 +159,7 @@ describe('Arrays', () => {
       assert.equal([1.1, 1.2, 1.3].isEmpty(), false);
     });
   });
+
 
   function lastArrayTest() {
     assert.equal([].last(), undefined);
@@ -132,6 +173,7 @@ describe('Arrays', () => {
     assert.deepEqual(['a', 'b', 'c'].last(1), ['c']);
     assert.deepEqual(['a', 'b', 'c'].last(2), ['b', 'c']);
   }
+
   describe('#last()', () => {
     it('should return the last element of array', () => {
       lastArrayTest();
@@ -151,40 +193,22 @@ describe('Arrays', () => {
     assert.deepEqual(['a', 'b', 'c'].rest(1), ['b', 'c']);
     assert.deepEqual(['a', 'b', 'c'].rest(2), ['c']);
   }
+
   describe('#rest()', () => {
     it('should return everything but the first entry of the array', () => {
       restArrayTest();
     });
   });
+
   describe('#tail()', () => {
     it('should return everything but the first entry of the array', () => {
       restArrayTest();
     });
   });
+
   describe('#drop()', () => {
     it('should return everything but the first entry of the array', () => {
       restArrayTest();
-    });
-  });
-
-
-  /* Built-in */
-  describe('#pop()', () => {
-    it('should remove the last element and returns that element', () => {
-      assert.deepEqual([1, 2, 3].pop(), 3);
-      assert.deepEqual([1, 2].pop(), 2);
-      assert.deepEqual([1].pop(), 1);
-      assert.equal([].pop(), undefined);
-    });
-  });
-
-
-  /* Built-in */
-  describe('#push()', () => {
-    it('should add elements to the end and return new one', () => {
-      assert.deepEqual([].push(1), 1);
-      assert.deepEqual([].push(1, 2), 2);
-      assert.deepEqual([].push(1, 2, 3), 3);
     });
   });
 
@@ -212,4 +236,5 @@ describe('Arrays', () => {
       assert.deepEqual(['a', 'b'].toObject(), {'0': 'a', '1': 'b'});
     });
   });
+
 });

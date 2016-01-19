@@ -11,4 +11,6 @@ String:
  * capitalize first letter
  * add #setLength() method
  * add #uneval() method
- 
+
+Maintenance:
+ * add linter rules
