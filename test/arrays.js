@@ -1,5 +1,5 @@
 /**
-  * Array test
+  * Array tests
   */
 
 import assert from 'assert';
@@ -181,6 +181,26 @@ describe('Arrays', () => {
   });
 
 
+  describe('#max()', () => {
+    it('should return maximum value of array', () => {
+      assert.equal([].max(), undefined);
+      assert.equal([1, 2, 3].max(), 3);
+      assert.equal(['a', 'b', 'c', 'd'].max(), undefined);
+      assert.equal([1, 2, 'c', 'd', true, null].max(), 2);
+    });
+  });
+
+
+  describe('#min()', () => {
+    it('should return minimal value of array', () => {
+      assert.equal([].min(), undefined);
+      assert.equal([1, 2, 3].min(), 1);
+      assert.equal(['a', 'b', 'c', 'd'].min(), undefined);
+      assert.equal([1, 2, 'c', 'd', true, null].min(), 1);
+    });
+  });
+
+
   function restArrayTest() {
     assert.equal([].rest(), undefined);
     assert.deepEqual([1, 2, 3].rest(), [2, 3]);
@@ -226,6 +246,13 @@ describe('Arrays', () => {
     it('should return sum of all elements from array', () => {
       assert.equal([].sum(), 0);
       assert.equal([1, 2, 3].sum(), 6);
+    });
+  });
+
+  describe('#toNumsOnly()', () => {
+    it('should convert remove all non number elements', () => {
+      assert.deepEqual([0, 1, 2].toNumsOnly(), [0, 1, 2]);
+      assert.deepEqual(['a', 'b'].toNumsOnly(), []);
     });
   });
 
