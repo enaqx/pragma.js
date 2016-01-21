@@ -2,7 +2,7 @@
  * String test
  */
 
-import * as assert from 'assert';
+import { assert } from 'chai';
 import { pragmaStrings } from '../pragma';
 
 describe('Strings', () => {

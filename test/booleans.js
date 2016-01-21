@@ -2,7 +2,7 @@
  * Boolean test
  */
 
-import * as assert from 'assert';
+import { assert } from 'chai';
 import { pragmaBooleans } from '../pragma';
 
 describe('Booleans', () => {

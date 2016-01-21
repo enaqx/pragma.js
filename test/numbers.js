@@ -2,7 +2,7 @@
  * Number test
  */
 
-import * as assert from 'assert';
+import { assert } from 'chai';
 import { pragmaNumbers } from '../pragma';
 
 describe('Numbers', () => {
@@ -617,7 +617,7 @@ describe('Numbers', () => {
   describe('#toString()', () => {
     it('should returns a string representing the number', () => {
       assert.deepEqual((-Infinity).toString(), '-Infinity');
-      assert.deepEqual((-9999e9999).toString(), -Infinity);
+      assert.deepEqual((-9999e9999).toString(), '-Infinity');
       assert.deepEqual((-9999.9999).toString(), '-9999.9999');
       assert.deepEqual((-9999).toString(), '-9999');
       assert.deepEqual((-254).toString(16), '-fe');

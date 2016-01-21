@@ -2,7 +2,7 @@
   * Array tests
   */
 
-import assert from 'assert';
+import { assert } from 'chai';
 import { pragmaArrays } from '../pragma';
 
 

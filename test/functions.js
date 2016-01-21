@@ -2,5 +2,5 @@
  * Function test
  */
 
-import * as assert from 'assert';
+import { assert } from 'chai';
 import { pragmaFunctions } from '../pragma';

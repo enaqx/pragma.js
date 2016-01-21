@@ -2,7 +2,7 @@
  * Promises Test
  */
 
-import * as assert from 'assert';
+import { assert } from 'chai';
 import { pragmaPromises } from '../pragma';
 
 describe('Promises', () => {

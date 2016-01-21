@@ -2,7 +2,7 @@
  * Sets tests
  */
 
-import * as assert from 'assert';
+import { assert } from 'chai';
 import { pragmaSets } from '../pragma';
 
 describe('Sets', () => {
