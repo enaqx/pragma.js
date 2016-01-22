@@ -68,6 +68,18 @@ describe('Arrays', () => {
   });
 
 
+  describe('#copyWithin()', () => {
+    it('copies the sequence of array elements within the array', () => {
+      assert.deepEqual([1, 2, 3].copyWithin(0, 2), [3, 2, 3]);
+      assert.deepEqual(['a', 'b', 'c'].copyWithin(0, 2), ['c', 'b', 'c']);
+      assert.deepEqual([undefined, 1, 1].copyWithin(0, 2), [1, 1, 1]);
+      assert.deepEqual([1, 2, 3, 4, 5].copyWithin(0, 3), [4, 5, 3, 4, 5]);
+      assert.deepEqual([1, 2, 3, 4, 5].copyWithin(0, 3, 4), [4, 2, 3, 4, 5]);
+      assert.deepEqual([1, 2, 3, 4, 5].copyWithin(0, -2, -1), [4, 2, 3, 4, 5]);
+    });
+  });
+
+
   describe('#pop()', () => {
     it('should remove the last element and returns that element', () => {
       assert.deepEqual([1, 2, 3].pop(), 3);
