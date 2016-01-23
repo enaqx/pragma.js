@@ -164,6 +164,16 @@ describe('Arrays', () => {
   });
 
 
+  describe('#insert()', () => {
+    it('should insert an item into an array at a specific index', () => {
+      assert.deepEqual([1, 2, 3].insert(2, 5), [1, 2, 5, 3]);
+      assert.deepEqual([1, 2, 3].insert(2, 5, 9), [1, 2, 5, 9, 3]);
+      assert.deepEqual([1, 2, 3].insert(2, 5, 'a', 9), [1, 2, 5, 'a', 9, 3]);
+      assert.deepEqual([1, 2, 3].insert(2, 4, [5, 6]), [1, 2, 4, 5, 6 ,3]);
+    });
+  });
+
+
   describe('#isEmpty()', () => {
     it('should return true on empty list', () => {
       assert.equal([].isEmpty(), true);
@@ -241,6 +251,15 @@ describe('Arrays', () => {
   describe('#drop()', () => {
     it('should return everything but the first entry of the array', () => {
       restArrayTest();
+    });
+  });
+
+
+  describe('#pasteWithin()', () => {
+    it('paste the sequence of array elements within the array', () => {
+      assert.deepEqual([1, 2, 3].pasteWithin(0, 2), [3, 1, 2, 3]);
+      assert.deepEqual(['a', 'b', 'c'].pasteWithin(0, 2), ['c', 'a', 'b', 'c']);
+      assert.deepEqual([1, 2, 3].pasteWithin(1, 2), [1, 3, 2, 3]);
     });
   });
 
