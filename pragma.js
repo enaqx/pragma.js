@@ -5,3 +5,4 @@ export { pragmaNumbers } from './lib/numbers';
 export { pragmaObjects } from './lib/objects';
 export { pragmaSets } from './lib/sets';
 export { pragmaStrings } from './lib/strings';
+export { pragmaArrayBuffers } from './lib/arraybuffers';
