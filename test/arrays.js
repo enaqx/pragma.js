@@ -30,7 +30,7 @@ describe('Arrays', () => {
 
   /* Built-in */
   describe('#isArray()', () => {
-    it('return true if an object is an array', () => {
+    it('return true if the argument is an array', () => {
       assert.equal(Array.isArray([]), true);
       assert.equal(Array.isArray([1]), true);
       assert.equal(Array.isArray([1, 2, 3]), true);
