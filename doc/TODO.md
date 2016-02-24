@@ -14,3 +14,4 @@ String:
 
 Maintenance:
  * add linter rules
+ * create as babel plugin
